@@ -1,18 +1,21 @@
 {
-  "name": "steklo-partner",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.4.0"
-  },
-  "devDependencies": {
-    "@unocss/reset": "^66.1.0-beta.3",
-    "unocss": "^66.1.0-beta.3"
-  }
+	"name": "steklo-partner",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"astro": "^5.4.0"
+	},
+	"devDependencies": {
+		"@unocss/reset": "^66.1.0-beta.3",
+		"prettier": "^3.5.2",
+		"prettier-plugin-astro": "^0.14.1",
+		"unocss": "^66.1.0-beta.3"
+	}
 }
