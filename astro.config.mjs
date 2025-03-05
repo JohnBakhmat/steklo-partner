@@ -6,13 +6,13 @@ import { default as deno } from "@deno/astro-adapter";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [
-        UnoCSS({
-            injectReset: true,
-        }),
-    ],
-    experimental: {
-        svg: true,
-    },
-    adapter: deno()
+	integrations: [
+		UnoCSS({
+			injectReset: true,
+		}),
+	],
+	experimental: {
+		svg: true,
+	},
+	adapter: deno(),
 });
