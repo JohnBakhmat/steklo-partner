@@ -2,7 +2,8 @@
 import InstallCard from "./install-card.astro";
 ---
 
-<section class="flex flex-col bg-white pt-[33px] px-5">
+<section class="flex flex-col bg-white pt-[33px] items-center">
+<div class="mx-5 lg:max-w-[1128px]">
 	<h1 class="text-[34px]">
 		Если ты <b>опытный монтажник</b> изделий из стекла и зеркал
 	</h1>
@@ -10,7 +11,7 @@ import InstallCard from "./install-card.astro";
 		<span class="text-accent text-[44px]">01</span> Умеешь устанавливать
 	</h2>
 
-	<div class="grid grid-cols-2 gap-x-5 gap-y-[26px] mb-[30px]">
+	<div class="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-[26px] mb-[30px]">
 		<InstallCard
 			img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJxo2NFiYcR35GzCk5T3nxA7rGlSsXvIfJwg&s"
 			title={`Душевые\nперегородки`}
@@ -25,10 +26,16 @@ import InstallCard from "./install-card.astro";
 			title={`Стеклянные двери \nи перегородки`}
 		/>
 
+
+		<div class="flex flex-col gap-[10px]">
+
 		<div
-			class="text-white grid place-items-center bg-[#373A40] aspect-square rounded-[4px] p-4"
+		class="text-white grid place-items-center bg-[#373A40] aspect-square rounded-[4px] p-4 max-w-[200px]"
 		>
-			Не говоря уже <br /> о мелочах вроде фартуков <br />и полок
+		Не говоря уже <br /> о мелочах вроде фартуков <br />и полок
+		</div>
+
+		<p class="text-base whitespace-pre-wrap">{"a"}</p>
 		</div>
 	</div>
 
@@ -37,4 +44,5 @@ import InstallCard from "./install-card.astro";
 	</h2>
 
 	<div class="bg-purple h-5"/>
+	</div>
 </section>
