@@ -1,0 +1,14 @@
+---
+type Props = {
+	img: string;
+	title: string;
+};
+
+const { img, title } = Astro.props;
+---
+
+
+<div class="space-y-3">
+    <img src={img} alt="">
+    <p class="text-center text-[21px]">{title}</p>
+</div>
