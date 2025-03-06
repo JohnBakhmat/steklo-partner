@@ -13,6 +13,7 @@ export default defineConfig({
 	theme: {
 		colors: {
 			accent: "#FFDA7C",
+			accentLight: "#FFEDB2",
 		},
 	},
 });
