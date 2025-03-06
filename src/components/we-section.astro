@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="pt-[48px] bg-white px-5 pb-[82px]">
+	<h1 class="text-[34px]/[1] mb-[14px]">Мы - компания <b>СТЕКЛО24</b></h1>
+	<p class="mb-[18px]">
+		Давайте познакомимся поближе. Хотя, если вы уже давно работаете с
+		изделиями из стекла, то точно про нас слышали.
+	</p>
+	<div class="grid grid-cols-2 gap-x-[10px] gap-y-[10px] mb-[13px]">
+		<Image
+			src="/steklo-1.png"
+			alt="steklo-1"
+			width={163}
+			height={108}
+			class="rounded-[4px]"
+		/>
+		<Image
+			src="/steklo-2.png"
+			alt="steklo-2"
+			width={163}
+			height={108}
+			class="rounded-[4px]"
+		/>
+		<Image
+			src="/steklo-3.png"
+			alt="steklo-3"
+			width={163}
+			height={108}
+			class="rounded-[4px]"
+		/>
+		<Image
+			src="/steklo-4.png"
+			alt="steklo-4"
+			width={163}
+			height={108}
+			class="rounded-[4px]"
+		/>
+		<Image
+			src="/steklo-5.png"
+			alt="steklo-5"
+			width={163}
+			height={108}
+			class="rounded-[4px]"
+		/>
+		<div
+			class="p-3 bg-accent rounded-[4px] text-base/[1.04] flex flex-col justify-center font-bold"
+		>
+			Да-да, это наше реальное производство
+		</div>
+	</div>
+	<p class="text-sm mb-[38px]">
+		Нам даже пришлось нанять человека с квадрокоптером, потому что оно не
+		влазило в кадр обычного фотоаппарата
+	</p>
+	<dl
+		class="grid grid-cols-2 gap-x-5 gap-y-[27px] [&_dt]:(font-bold text-[24px] leading-[1]) [&_dd]:(text-base whitespace-pre-line)"
+	>
+		<div>
+			<dt>14 лет</dt>
+			<dd>В стекоьном <br /> бизнесе</dd>
+		</div>
+		<div>
+			<dt>2500 кв.м</dt>
+			<dd>прозводственных площадей</dd>
+		</div>
+		<div>
+			<dt>20 единиц</dt>
+			<dd>Своего производственного оборудования</dd>
+		</div>
+		<div>
+			<dt>1000+ заказов</dt>
+			<dd>Среднее <br /> количество в <br />месяц</dd>
+		</div>
+		<div>
+			<dt>Более 2000</dt>
+			<dd>
+				<a href="#" class="text-[#1C6FFF] underline hover:opacity-80"
+					>Благодарных отзывов</a
+				> реальных клиентов
+			</dd>
+		</div>
+	</dl>
+</section>
