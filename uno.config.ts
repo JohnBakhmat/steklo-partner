@@ -2,14 +2,14 @@ import {
 	defineConfig,
 	presetIcons,
 	presetWebFonts,
-	presetWind4,
+	presetWind3,
 	transformerDirectives,
 	transformerVariantGroup,
 } from "unocss";
 
 export default defineConfig({
 	transformers: [transformerDirectives(), transformerVariantGroup()],
-	presets: [presetWind4(), presetIcons(), presetWebFonts()],
+	presets: [presetWind3(), presetIcons(), presetWebFonts()],
 	theme: {
 		colors: {
 			accent: "#FFDA7C",
