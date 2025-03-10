@@ -1,6 +1,7 @@
 ---
 import InstallCard from "./install-card.astro";
 import SkillBlock from "./skill-block.astro";
+import WeChooseYou from "./we-choose-you.astro";
 ---
 
 <section class="flex flex-col bg-white pt-[33px] lg:pt-[142px] items-center">
@@ -55,7 +56,7 @@ import SkillBlock from "./skill-block.astro";
 			/>
 		</div>
 
-		<div class="">
+		<div class="lg:hidden">
 			<h2
 				class="font-bold flex flex-row items-center gap-x-3 text-[21px] px-[15px] border-(1 dashed [#909090]) rounded-[9px]"
 			>
@@ -72,5 +73,7 @@ import SkillBlock from "./skill-block.astro";
 				>Заполни заявку</button
 			>
 		</div>
+
+		<WeChooseYou />
 	</div>
 </section>
