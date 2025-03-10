@@ -5,7 +5,7 @@
 }
 
 .max-w-app {
-	@apply max-w-[1128px];
+	@apply max-w-[1128px] mx-auto;
 }
 
 .custom-radio-button {
