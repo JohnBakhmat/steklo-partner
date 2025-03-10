@@ -1,3 +1,19 @@
 .font-inter {
 	font-family: "Inter", sans-serif;
 }
+
+.custom-radio-button {
+	@apply w-[23px] h-[23px] text-red-500 border-gray-100 focus:ring-none;
+}
+
+.radio-checked {
+	position: relative;
+}
+
+.radio-checked::after {
+	content: "";
+	inset: 7px;
+	position: absolute;
+	background: #000;
+	border-radius: 100%;
+}

@@ -1,7 +1,15 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type PropsWithChildren, useEffect } from "react";
-import { Controller, type SubmitHandler, useForm } from "react-hook-form";
+import {
+	Controller,
+	type ControllerFieldState,
+	type ControllerProps,
+	type ControllerRenderProps,
+	type SubmitHandler,
+	useForm,
+} from "react-hook-form";
 import { z } from "zod";
+import { RadioButton } from "./radio-button";
 
 const schema = z.object({
 	hasMeasurementExperience: z.string().transform((x) => x === "true"),
@@ -19,7 +27,7 @@ const schema = z.object({
 type Schema = z.infer<typeof schema>;
 
 export const Survey = () => {
-	const { register, handleSubmit, watch, formState, getValues, control } =
+	const { register, handleSubmit, watch, formState, setValue, control } =
 		useForm<Schema>({
 			defaultValues: {
 				hasMeasurementExperience: true,
@@ -39,36 +47,38 @@ export const Survey = () => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className="bg-black rounded-[10px] px-[30px] py-[27px] text-white">
-				<h1 className="text-accent">Заполни простую анкету</h1>
-				<h2>Что уже монтировал?</h2>
+				<h1 className="text-accent font-bold text-[34px]/[1] mb-[30px]">
+					Заполни простую анкету
+				</h1>
+				<h2 className="font-bold text-[21px] mb-4">
+					Что уже монтировал?
+				</h2>
 
 				<Controller
 					name="hasMeasurementExperience"
 					control={control}
-					render={({ field }) => (
-						<fieldset className="mb-5">
+					render={({ field, fieldState }) => (
+						<fieldset className="mb-5 flex flex-col gap-[9px] text-base">
 							<legend className="font-bold text-[21px] mb-4">
 								Опыт замеров
 							</legend>
-							<div>
-								<input
-									{...field}
-									defaultChecked
-									type="radio"
-									id="measurements-true"
-									value="true"
-								/>
-								<label htmlFor="measurements-true">Да</label>
-							</div>
-							<div>
-								<input
-									{...field}
-									type="radio"
-									id="measurements-false"
-									value="false"
-								/>
-								<label htmlFor="measurements-false">Нет</label>
-							</div>
+							<RadioButton
+								isActive={field.value === true}
+								label="Да"
+								id="measurements-true"
+								onClick={() => {
+									setValue("hasMeasurementExperience", true);
+								}}
+							/>
+							<p>{field.value}</p>
+							<RadioButton
+								isActive={field.value === false}
+								label="Нет"
+								id="measurements-false"
+								onClick={() => {
+									setValue("hasMeasurementExperience", false);
+								}}
+							/>
 						</fieldset>
 					)}
 				/>
@@ -116,3 +126,31 @@ export const Survey = () => {
 const ErrorMessage = ({ children }: PropsWithChildren) => {
 	return <p className="text-red-500">{children}</p>;
 };
+
+// const RadioButton = ({
+// 	id,
+// 	field,
+// 	label,
+// 	defaultChecked,
+// 	value,
+// }: {
+// 	label: string;
+// 	id: string;
+// 	field: ControllerRenderProps<Schema, "hasMeasurementExperience">;
+// 	defaultChecked?: boolean | undefined;
+// 	value: "true" | "false";
+// }) => {
+// 	return (
+// 		<div className="flex items-center gap-2">
+// 			<input
+// 				{...field}
+// 				type="radio"
+// 				defaultChecked={defaultChecked}
+// 				id={id}
+// 				value={value}
+// 				className=""
+// 			/>
+// 			<label htmlFor={id}>{label}</label>
+// 		</div>
+// 	);
+// };
