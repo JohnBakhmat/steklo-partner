@@ -14,7 +14,7 @@ const { img, alt, className, title, description } = Astro.props;
 
 <div class:list={["space-y-[22px]", className]}>
 	<Image src={img} alt={alt} width={335} height={177} />
-	<div class="text-[21px]/[1] text-center space-y-[6px]">
+	<div class="text-[21px]/[1] text-center lg:text-left space-y-[6px]">
 		<b>{title}</b>
 		<p>{description}</p>
 	</div>

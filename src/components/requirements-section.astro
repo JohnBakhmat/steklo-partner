@@ -1,58 +1,106 @@
 ---
+import { Image } from "astro:assets";
 import Requirement from "./requirement.astro";
 ---
 
 <section class="bg-white">
 	<div class="px-5 pt-[50px] max-w-[1128px] mx-auto">
-		<h1 class="text-[34px] leading-[1] text-center mb-6">
-			Что нам нужно <br /><b>от тебя?</b>
-		</h1>
-
-		<Requirement
-			img="/suitcase.png"
-			alt="стать ИП"
-			className="mb-[30px]"
-			title="Стать ИП"
-			description="самозанятость не подойдёт"
-		/>
-		<Requirement
-			img="/contract.png"
-			alt="стать ИП"
-			className="mb-[51px]"
-			title="Заключить договор"
-			description="Ведь это всегда важно"
-		/>
-		<Requirement
-			img="/study.png"
-			alt="стать ИП"
-			title="Пройти обучение"
-			description="Занимает 1-2 дня вместе с подключением к сервису"
-		/>
-
-		<hr class="mb-[29px] mt-[34px] border-[#C1C1C1] border-1" />
-
-		<h1 class="text-[34px]/[1] font-bold text-center mb-[13px]">
-			Как только выполнены эти три простых условия
-		</h1>
-		<h2 class="text-center text-[21px]/[1] mb-[22px]">
-			Ты начинаешь получать заявки и уже в первый день можешь получить
-			оплату
-		</h2>
-		<div
-			class="bg-accent-light px-[34px] py-[26px] rounded-[20px] space-y-[10px]"
+		<h1
+			class="text-[34px] lg:text-[64px] leading-[1] text-center lg:text-left mb-6"
 		>
-			<h3 class="text-[21px]/[1] font-bold">
-				Подключаем не больше <br />3 новых бригад в месяц
-			</h3>
-			<p class="text-base/[1.25]">
-				Почему так? Потому что нам действительно важно, чтобы и ты
-				остался доволен условиями и мы получили качественную и слаженную
-				бригаду, которая умеет грамонтно работать с нашими заявками
-			</p>
+			Что нам нужно <br class="lg:hidden" /><b>от тебя?</b>
+		</h1>
+
+		<div class="grid grid-cols-1 lg:grid-cols-3">
+			<Requirement
+				img="/suitcase.png"
+				alt="стать ИП"
+				className="mb-[30px]"
+				title="Стать ИП"
+				description="самозанятость не подойдёт"
+			/>
+			<Requirement
+				img="/contract.png"
+				alt="стать ИП"
+				className="mb-[51px]"
+				title="Заключить договор"
+				description="Ведь это всегда важно"
+			/>
+			<Requirement
+				img="/study.png"
+				alt="стать ИП"
+				title="Пройти обучение"
+				description="Занимает 1-2 дня вместе с подключением к сервису"
+			/>
 		</div>
-		<button
-			class="bg-accent w-full py-[14px] rounded-full font-bold text-[18px] mt-[25px]"
-			>Заполни заявку</button
-		>
+
+		<hr
+			class="mb-[29px] lg:mb-[118px] mt-[34px] border-[#C1C1C1] border-1"
+		/>
+
+		<div class="grid grid-cols-1 lg:grid-cols-2">
+			<div>
+				<h1
+					class="text-[34px]/[1] lg:text-[50px] font-bold text-center lg:text-left mb-[13px]"
+				>
+					Как только <br class="max-md:hidden" /> выполнены эти три <br
+						class="max-md:hidden"
+					/> простых условия
+				</h1>
+
+				<h2
+					class="text-center lg:text-left text-[21px] text-[24px] leading-[1] mb-[22px] lg:mb-[33px]"
+				>
+					Ты начинаешь получать заявки и уже в <br
+						class="max-md:hidden"
+					/>первый день можешь получить оплату
+				</h2>
+
+				<div
+					class="bg-accent-light px-[34px] py-[26px] rounded-[20px] space-y-[10px] lg:hidden mb-[25px]"
+				>
+					<h3 class="text-[21px]/[1] font-bold">
+						Подключаем не больше <br />3 новых бригад в месяц
+					</h3>
+					<p class="text-base/[1.25]">
+						Почему так? Потому что нам действительно важно, чтобы и
+						ты остался доволен условиями и мы получили качественную
+						и слаженную бригаду, которая умеет грамонтно работать с
+						нашими заявками
+					</p>
+				</div>
+				<button
+					class="bg-accent w-full lg:w-fit px-[26px] py-[14px] rounded-full font-bold text-[18px]"
+					>Заполни заявку</button
+				>
+			</div>
+
+			<!-- Desktop only component -->
+			<div
+				class="bg-accent-light rounded-[27px] pt-[42px] pl-[37px] max-md:hidden max-h-[500px] relative"
+			>
+				<img
+					src="/dude-back.png"
+					width={290}
+					height={394}
+					alt="dude"
+					class="absolute -right-[76px] bottom-0"
+				/>
+				<h3 class="text-[32px]/[1] font-bold">
+					Подключаем не <br /> больше 3 новых <br /> бригад в месяц
+				</h3>
+				<p class="text-base/[1.25] whitespace-pre-line">
+					{
+						`Почему так? Потому что нам
+					действительно важно, чтобы и ты
+					остался доволен условиями и мы
+					получили качественную и слаженную
+					бригаду, которая умеет грамонтно
+					работать с нашими заявками`
+					}
+				</p>
+			</div>
+			<!-- --- -->
+		</div>
 	</div>
 </section>
