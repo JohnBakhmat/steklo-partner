@@ -16,7 +16,8 @@
 		"@types/react-dom": "^19.0.4",
 		"astro": "^5.4.0",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react-dom": "^19.0.0",
+		"react-hook-form": "^7.54.2"
 	},
 	"devDependencies": {
 		"@unocss/reset": "^66.1.0-beta.3",
