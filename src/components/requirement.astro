@@ -12,8 +12,14 @@ type Props = {
 const { img, alt, className, title, description } = Astro.props;
 ---
 
-<div class:list={["space-y-[22px]", className]}>
-	<Image src={img} alt={alt} width={335} height={177} />
+<div class:list={["flex flex-col gap-y-[22px]", className]}>
+	<Image
+		src={img}
+		alt={alt}
+		width={335}
+		height={177}
+		class="w-full h-[210px] object-bottom object-contain"
+	/>
 	<div class="text-[21px]/[1] text-center lg:text-left space-y-[6px]">
 		<b>{title}</b>
 		<p>{description}</p>
