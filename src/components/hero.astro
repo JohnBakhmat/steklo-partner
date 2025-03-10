@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import Rombus from "../assets/rombus.svg";
+---
+
+<div class="lg:hidden">
+	<div
+		class="bg-black/20 mx-5 px-[30px] pt-[30px] mt-[90px] rounded-4 absolute inset-0 -z-20"
+	>
+	</div>
+	<div class="text-white mx-5 px-[30px] pt-[30px]">
+		<h1 class="font-bold text-[38px]/[100%]">
+			Предлагаем тебе <span class="text-accent"
+				>стать партнером Стекло24</span
+			>
+		</h1>
+		<h2 class="text-[21px]/[100%] mt-.5 mb-.75">
+			И зарабатывать <br /><b
+				>1,000,000<span class="text-accent">₽</span></b
+			> в месяц*
+		</h2>
+		<p class="opacity-70">
+			Хочешь узнать куак это работает <br /> и что нужно делать?
+		</p>
+	</div>
+
+	<div class="relative w-full h-[390px] overflow-hidden">
+		<Rombus class="absolute inset-0 top-auto w-full -z-10" />
+		<Image
+			class="absolute top-0 right-0"
+			src="/glass-man.png"
+			alt="glass man"
+			width={342}
+			height={464}
+		/>
+		<p
+			class="absolute inset-x-2 bottom-[20px] top-auto w-full opacity-70 z-10 text-(white center)"
+		>
+			*Средняя сумма дохода, включая <br />"мёртвые сезоны" и праздники
+		</p>
+	</div>
+</div>
+
+<div class="max-lg:hidden">
+	<div
+		class="relative text-white pl-[96px] pt-[79px] pb-[118px] pr-[123px] grid grid-cols-[1fr_2fr] max-w-[1400px]"
+	>
+		<img src="/hero-bg.png" class="absolute inset-0 -z-10" />
+		<div class="flex flex-col gap-[25px]">
+			<h1 class="font-bold text-[60px]/[1]">
+				Предлагаем тебе <span class="text-accent"
+					>стать партнером Стекло24</span
+				>
+			</h1>
+			<h2 class="text-[32px]">
+				И зарабатывать <br /><b
+					>1,000,000<span class="text-accent">₽</span></b
+				> в месяц*
+			</h2>
+			<p class="opacity-70 text-[24px]">
+				Хочешь узнать как это <br /> работает и что нужно делать?
+			</p>
+		</div>
+		<div class="w-full grid grid-cols-1 relative">
+			<img
+				src="/dude-with-rombus.png"
+				class="-translate-y-[50%] top-[70%] absolute max-w-[778px]"
+			/>
+		</div>
+	</div>
+
+	<p class="text-(white) my-[70px] ml-[93px]">
+		*Средняя сумма дохода, включая <br />"мёртвые сезоны" и праздники
+	</p>
+</div>
