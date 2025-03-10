@@ -7,15 +7,15 @@ import { RadioButton } from "./radio-button";
 
 const schema = z.object({
 	hasMounted: z.object({
-		bathroom: z.boolean(),
-		shelves: z.boolean(),
-		mirrors: z.boolean(),
-		mirrorPanels: z.boolean(),
-		glassDividers: z.boolean(),
-		stairRailing: z.boolean(),
-		glassPatios: z.boolean(),
+		bathroom: z.boolean().default(false),
+		shelves: z.boolean().default(false),
+		mirrors: z.boolean().default(false),
+		mirrorpanels: z.boolean().default(false),
+		glassdividers: z.boolean().default(false),
+		stairrailing: z.boolean().default(false),
+		glasspatios: z.boolean().default(false),
 	}),
-	hasMeasurementExperience: z.string().transform((x) => x === "true"),
+	hasMeasurementExperience: z.boolean().default(true),
 	name: z
 		.string()
 		.min(2, "Имя не может быть короче 2 символов")
@@ -34,14 +34,20 @@ export const Survey = () => {
 		useForm<Schema>({
 			defaultValues: {
 				hasMeasurementExperience: true,
+				hasMounted: {
+					bathroom: false,
+					shelves: false,
+					mirrors: false,
+					mirrorpanels: false,
+					glassdividers: false,
+					stairrailing: false,
+					glasspatios: false,
+				},
+				name: "",
+				phone: "",
 			},
 			resolver: zodResolver(schema),
 		});
-
-	const values = watch();
-	useEffect(() => {
-		console.log(values, formState.isValid, formState.errors);
-	}, [values, formState]);
 
 	const onSubmit: SubmitHandler<Schema> = (data: Schema) => {
 		console.dir(data);
@@ -67,13 +73,98 @@ export const Survey = () => {
 						Что уже монтировал?
 					</h2>
 					<div className="flex flex-col gap-[7px] mb-[50px]">
-						<Checkbox label="Душевые" />
-						<Checkbox label="Полки" />
-						<Checkbox label="Зеркала" />
-						<Checkbox label="Зеркальное панно" />
-						<Checkbox label="Стеклянные перегородки" />
-						<Checkbox label="Лестничные ограждения" />
-						<Checkbox label="Стеклянные козырьки" />
+						<Controller
+							name="hasMounted.bathroom"
+							control={control}
+							render={({ field }) => (
+								<Checkbox
+									label="Душевые"
+									isChecked={field.value}
+									onCheckedChange={(x) =>
+										setValue(field.name, x)
+									}
+								/>
+							)}
+						/>
+
+						<Controller
+							name="hasMounted.shelves"
+							control={control}
+							render={({ field }) => (
+								<Checkbox
+									label="Полки"
+									isChecked={field.value}
+									onCheckedChange={(x) =>
+										setValue(field.name, x)
+									}
+								/>
+							)}
+						/>
+						<Controller
+							name="hasMounted.mirrors"
+							control={control}
+							render={({ field }) => (
+								<Checkbox
+									label="Зеркала"
+									isChecked={field.value}
+									onCheckedChange={(x) =>
+										setValue(field.name, x)
+									}
+								/>
+							)}
+						/>
+						<Controller
+							name="hasMounted.mirrorpanels"
+							control={control}
+							render={({ field }) => (
+								<Checkbox
+									label="Зеркальное панно"
+									isChecked={field.value}
+									onCheckedChange={(x) =>
+										setValue(field.name, x)
+									}
+								/>
+							)}
+						/>
+						<Controller
+							name="hasMounted.glassdividers"
+							control={control}
+							render={({ field }) => (
+								<Checkbox
+									label="Стеклянные перегородки"
+									isChecked={field.value}
+									onCheckedChange={(x) =>
+										setValue(field.name, x)
+									}
+								/>
+							)}
+						/>
+						<Controller
+							name="hasMounted.stairrailing"
+							control={control}
+							render={({ field }) => (
+								<Checkbox
+									label="Лестничные огражения"
+									isChecked={field.value}
+									onCheckedChange={(x) =>
+										setValue(field.name, x)
+									}
+								/>
+							)}
+						/>
+						<Controller
+							name="hasMounted.glasspatios"
+							control={control}
+							render={({ field }) => (
+								<Checkbox
+									label="Стеклянные козырьки"
+									isChecked={field.value}
+									onCheckedChange={(x) =>
+										setValue(field.name, x)
+									}
+								/>
+							)}
+						/>
 					</div>
 
 					<Controller
