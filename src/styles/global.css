@@ -4,6 +4,10 @@
 	font-family: "Inter", sans-serif;
 }
 
+.max-w-app {
+	@apply max-w-[1128px];
+}
+
 .custom-radio-button {
 	@apply w-[23px] h-[23px] text-red-500 border-gray-100 focus:ring-none;
 }
