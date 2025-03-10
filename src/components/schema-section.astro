@@ -1,3 +1,60 @@
-<section class="bg-black">
-	<h1><span class="text-accent">По какой схеме</span> будем работать?</h1>
+---
+import { Image } from "astro:assets";
+import SchemaStep from "./schema-step.astro";
+---
+
+<section
+	class="bg-black relative pt-[39px] lg:pt-[76px] pb-[78px] lg:pb-[73px] z-0"
+>
+	<Image
+		src="/schema-bg.png"
+		alt="schema bg"
+		width={384}
+		height={156}
+		class="inset-0 absolute h-full w-full object-cover -z-10"
+	/>
+
+	<div
+		class="max-w-app mx-5 lg:mx-auto text-(center [34px] white) font-bold lg:text-(left [64px])"
+	>
+		<h1><span class="text-accent">По какой схеме</span> будем работать?</h1>
+
+		<div class="grid grid-cols-1 lg:grid-cols-3 mt-[26px]">
+			<SchemaStep
+				icon="/scroll-icon.png"
+				index={1}
+				description="Заключаем договор и предоставляем доступ к программе"
+			/>
+			<SchemaStep
+				icon="/pen-icon.png"
+				index={2}
+				description="Передаем заявки на заказы, ты делаешь замеры"
+			/>
+			<SchemaStep
+				icon="/wallet-icon.png"
+				index={3}
+				description="Ты получаешь оплаты от клиентов на свой банковский счет"
+			/>
+			<SchemaStep
+				icon="/handshake-icon.png"
+				index={4}
+				className="[&_span]:(font-bold text-accent)"
+			>
+				Над заявками ты работаешь с выделенной командой <span
+					>менеджеров, конструкторов</span
+				>, тебя опекает <span>юрист</span> и <span>бухгалтер</span>
+			</SchemaStep>
+			<SchemaStep
+				icon="/money-icon.png"
+				index={5}
+				description="Оплачиваешь нам изделия и фурнитуру со скидкой"
+			/>
+			<SchemaStep
+				icon="/drill-icon.png"
+				index={6}
+				isLast
+				description="Забираешь заказы со склада в Москве, делаешь монтажи"
+			/>
+		</div>
+	</div>
 </section>

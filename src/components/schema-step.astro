@@ -1,0 +1,41 @@
+---
+type Props = {
+	icon: string;
+	index: number;
+	description?: string;
+	isLast?: boolean | undefined;
+	className?: string;
+};
+
+const { icon, index, description, isLast, className } = Astro.props;
+
+const idx = `${index}`.padStart(2, "0");
+---
+
+<!-- Mobile -->
+<div
+	class:list={[
+		"lg:hidden grid grid-cols-2 gap-x-[6px] gap-y-[12px] justify-items-center items-center",
+		className,
+	]}
+>
+	<img src={icon} alt={"asdf"} width={86} class="justify-self-end" />
+	<p class="text-(left [70px]) font-extrabold leading-[1] justify-self-start">
+		{idx}
+	</p>
+
+	<p class="col-span-2 text-(center base/[1] [#B5B4B4]) font-normal">
+		{description}
+		<slot />
+	</p>
+
+	<img
+		src="/stripe.png"
+		alt="stripe"
+		class="w-[3px] h-[44px] col-span-2 my-[17px] aria-[hidden=true]:hidden"
+		aria-hidden={isLast}
+	/>
+</div>
+
+<!-- Desktop -->
+<div class="max-md:hidden"></div>
