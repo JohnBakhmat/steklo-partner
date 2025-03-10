@@ -47,7 +47,7 @@ export const Survey = () => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<div className="relative rounded-[10px] z-0 px-[30px] py-[27px] text-white">
+			<div className="relative rounded-[10px] z-0 px-[30px] py-[27px] text-white overflow-hidden">
 				<img
 					src="/survey-bg-blur.png"
 					alt="blur"
