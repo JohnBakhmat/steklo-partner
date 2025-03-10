@@ -66,7 +66,7 @@ export const Survey = () => {
 					/>
 
 					<div className="z-0">
-						<h1 className="text-accent font-bold text-[34px]/[1] mb-[30px]">
+						<h1 className="text-accent font-bold text-[34px]/[1] lg:text-[64px] mb-[30px]">
 							Заполни простую анкету
 						</h1>
 
@@ -236,23 +236,31 @@ export const Survey = () => {
 								)}
 							/>
 						</div>
-						<button
-							type="submit"
-							className="bg-accent py-[14px] mb-[30px] px-auto w-full rounded-[50px] text-black text-lg font-bold"
-						>
-							Отправить заявку
-						</button>
 
-						<p className="text-center text-[12px]">
-							Нажимая на данную кнопку вы соглашаетесь <br />с{" "}
-							<a href="#" className="underline">
-								политикой обработки персональных <br />
-								данных
-							</a>
-						</p>
+						<div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-y-[30px] gap-x-[13px]">
+							<button
+								type="submit"
+								className="bg-accent py-[14px] px-auto w-full rounded-[50px] text-black text-lg font-bold"
+							>
+								Отправить заявку
+							</button>
+
+							<p className="text-center text-[12px] lg:text-left opacity-80">
+								Нажимая на данную кнопку вы соглашаетесь <br />с{" "}
+								<a href="#" className="underline">
+									политикой обработки персональных <br />
+									данных
+								</a>
+							</p>
+						</div>
 					</div>
 				</div>
-				<img className="max-md:hidden w-full h-full object-cover" src="/survey-bg.png" width={3596} height={3616} />
+				<img
+					className="max-md:hidden w-full h-full object-cover"
+					src="/survey-bg.png"
+					width={3596}
+					height={3616}
+				/>
 			</div>
 		</form>
 	);
