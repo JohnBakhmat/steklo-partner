@@ -55,201 +55,204 @@ export const Survey = () => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<div className="relative rounded-[10px] z-0 px-[30px] py-[27px] text-white overflow-hidden">
-				<img
-					src="/survey-bg-blur.png"
-					alt="blur"
-					width={3596}
-					height={3616}
-					className="absolute inset-0 -z-10 w-full h-full object-cover"
-				/>
+			<div className="rounded-[10px] z-0 text-white overflow-hidden grid lg:grid-cols-[3fr_2fr]">
+				<div className="relative z-0 px-[30px] py-[27px]">
+					<img
+						src="/survey-bg-blur.png"
+						alt="blur"
+						width={3596}
+						height={3616}
+						className="absolute inset-0 -z-10 w-full h-full object-cover"
+					/>
 
-				<div className="z-0">
-					<h1 className="text-accent font-bold text-[34px]/[1] mb-[30px]">
-						Заполни простую анкету
-					</h1>
+					<div className="z-0">
+						<h1 className="text-accent font-bold text-[34px]/[1] mb-[30px]">
+							Заполни простую анкету
+						</h1>
 
-					<div className="grid grid-cols-1 lg:grid-cols-2">
-						<div>
-							<h2 className="font-bold text-[21px] mb-4">
-								Что уже монтировал?
-							</h2>
-							<div className="flex flex-col gap-[7px] mb-[50px]">
-								<Controller
-									name="hasMounted.bathroom"
-									control={control}
-									render={({ field }) => (
-										<Checkbox
-											label="Душевые"
-											isChecked={field.value}
-											onCheckedChange={(x) =>
-												setValue(field.name, x)
-											}
-										/>
-									)}
-								/>
+						<div className="grid grid-cols-1 lg:grid-cols-2">
+							<div>
+								<h2 className="font-bold text-[21px] mb-4">
+									Что уже монтировал?
+								</h2>
+								<div className="flex flex-col gap-[7px] mb-[50px]">
+									<Controller
+										name="hasMounted.bathroom"
+										control={control}
+										render={({ field }) => (
+											<Checkbox
+												label="Душевые"
+												isChecked={field.value}
+												onCheckedChange={(x) =>
+													setValue(field.name, x)
+												}
+											/>
+										)}
+									/>
 
-								<Controller
-									name="hasMounted.shelves"
-									control={control}
-									render={({ field }) => (
-										<Checkbox
-											label="Полки"
-											isChecked={field.value}
-											onCheckedChange={(x) =>
-												setValue(field.name, x)
-											}
-										/>
-									)}
-								/>
-								<Controller
-									name="hasMounted.mirrors"
-									control={control}
-									render={({ field }) => (
-										<Checkbox
-											label="Зеркала"
-											isChecked={field.value}
-											onCheckedChange={(x) =>
-												setValue(field.name, x)
-											}
-										/>
-									)}
-								/>
-								<Controller
-									name="hasMounted.mirrorpanels"
-									control={control}
-									render={({ field }) => (
-										<Checkbox
-											label="Зеркальное панно"
-											isChecked={field.value}
-											onCheckedChange={(x) =>
-												setValue(field.name, x)
-											}
-										/>
-									)}
-								/>
-								<Controller
-									name="hasMounted.glassdividers"
-									control={control}
-									render={({ field }) => (
-										<Checkbox
-											label="Стеклянные перегородки"
-											isChecked={field.value}
-											onCheckedChange={(x) =>
-												setValue(field.name, x)
-											}
-										/>
-									)}
-								/>
-								<Controller
-									name="hasMounted.stairrailing"
-									control={control}
-									render={({ field }) => (
-										<Checkbox
-											label="Лестничные огражения"
-											isChecked={field.value}
-											onCheckedChange={(x) =>
-												setValue(field.name, x)
-											}
-										/>
-									)}
-								/>
-								<Controller
-									name="hasMounted.glasspatios"
-									control={control}
-									render={({ field }) => (
-										<Checkbox
-											label="Стеклянные козырьки"
-											isChecked={field.value}
-											onCheckedChange={(x) =>
-												setValue(field.name, x)
-											}
-										/>
-									)}
-								/>
+									<Controller
+										name="hasMounted.shelves"
+										control={control}
+										render={({ field }) => (
+											<Checkbox
+												label="Полки"
+												isChecked={field.value}
+												onCheckedChange={(x) =>
+													setValue(field.name, x)
+												}
+											/>
+										)}
+									/>
+									<Controller
+										name="hasMounted.mirrors"
+										control={control}
+										render={({ field }) => (
+											<Checkbox
+												label="Зеркала"
+												isChecked={field.value}
+												onCheckedChange={(x) =>
+													setValue(field.name, x)
+												}
+											/>
+										)}
+									/>
+									<Controller
+										name="hasMounted.mirrorpanels"
+										control={control}
+										render={({ field }) => (
+											<Checkbox
+												label="Зеркальное панно"
+												isChecked={field.value}
+												onCheckedChange={(x) =>
+													setValue(field.name, x)
+												}
+											/>
+										)}
+									/>
+									<Controller
+										name="hasMounted.glassdividers"
+										control={control}
+										render={({ field }) => (
+											<Checkbox
+												label="Стеклянные перегородки"
+												isChecked={field.value}
+												onCheckedChange={(x) =>
+													setValue(field.name, x)
+												}
+											/>
+										)}
+									/>
+									<Controller
+										name="hasMounted.stairrailing"
+										control={control}
+										render={({ field }) => (
+											<Checkbox
+												label="Лестничные огражения"
+												isChecked={field.value}
+												onCheckedChange={(x) =>
+													setValue(field.name, x)
+												}
+											/>
+										)}
+									/>
+									<Controller
+										name="hasMounted.glasspatios"
+										control={control}
+										render={({ field }) => (
+											<Checkbox
+												label="Стеклянные козырьки"
+												isChecked={field.value}
+												onCheckedChange={(x) =>
+													setValue(field.name, x)
+												}
+											/>
+										)}
+									/>
+								</div>
 							</div>
+
+							<Controller
+								name="hasMeasurementExperience"
+								control={control}
+								render={({ field }) => (
+									<fieldset className="mb-5 flex flex-col gap-y-[4.5px] text-base">
+										<legend className="font-bold text-[21px] mb-4">
+											Опыт замеров
+										</legend>
+										<RadioButton
+											isActive={field.value === true}
+											label="Да"
+											id="measurements-true"
+											onClick={() => {
+												setValue(
+													"hasMeasurementExperience",
+													true,
+												);
+											}}
+										/>
+										<p>{field.value}</p>
+										<RadioButton
+											isActive={field.value === false}
+											label="Нет"
+											id="measurements-false"
+											onClick={() => {
+												setValue(
+													"hasMeasurementExperience",
+													false,
+												);
+											}}
+										/>
+									</fieldset>
+								)}
+							/>
 						</div>
+						<div className="mb-5 grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-5 [&_input]:(rounded-[5px] w-full px-5 py-[15px] text-black)">
+							<Controller
+								name="name"
+								control={control}
+								render={({ field, fieldState }) => (
+									<div className="w-full">
+										<input {...field} placeholder="Имя" />
+										<ErrorMessage>
+											{fieldState.error?.message}
+										</ErrorMessage>
+									</div>
+								)}
+							/>
+							<Controller
+								name="phone"
+								control={control}
+								render={({ field, fieldState }) => (
+									<div className="w-full">
+										<input
+											{...field}
+											placeholder="Телефон"
+											type="tel"
+										/>
+										<ErrorMessage>
+											{fieldState.error?.message}
+										</ErrorMessage>
+									</div>
+								)}
+							/>
+						</div>
+						<button
+							type="submit"
+							className="bg-accent py-[14px] mb-[30px] px-auto w-full rounded-[50px] text-black text-lg font-bold"
+						>
+							Отправить заявку
+						</button>
 
-						<Controller
-							name="hasMeasurementExperience"
-							control={control}
-							render={({ field }) => (
-								<fieldset className="mb-5 flex flex-col gap-y-[4.5px] text-base">
-									<legend className="font-bold text-[21px] mb-4">
-										Опыт замеров
-									</legend>
-									<RadioButton
-										isActive={field.value === true}
-										label="Да"
-										id="measurements-true"
-										onClick={() => {
-											setValue(
-												"hasMeasurementExperience",
-												true,
-											);
-										}}
-									/>
-									<p>{field.value}</p>
-									<RadioButton
-										isActive={field.value === false}
-										label="Нет"
-										id="measurements-false"
-										onClick={() => {
-											setValue(
-												"hasMeasurementExperience",
-												false,
-											);
-										}}
-									/>
-								</fieldset>
-							)}
-						/>
+						<p className="text-center text-[12px]">
+							Нажимая на данную кнопку вы соглашаетесь <br />с{" "}
+							<a href="#" className="underline">
+								политикой обработки персональных <br />
+								данных
+							</a>
+						</p>
 					</div>
-					<div className="mb-5 flex flex-col gap-y-5 [&_input]:(rounded-[5px] w-full px-5 py-[15px] text-black)">
-						<Controller
-							name="name"
-							control={control}
-							render={({ field, fieldState }) => (
-								<div className="w-full">
-									<input {...field} placeholder="Имя" />
-									<ErrorMessage>
-										{fieldState.error?.message}
-									</ErrorMessage>
-								</div>
-							)}
-						/>
-						<Controller
-							name="phone"
-							control={control}
-							render={({ field, fieldState }) => (
-								<div className="w-full">
-									<input
-										{...field}
-										placeholder="Телефон"
-										type="tel"
-									/>
-									<ErrorMessage>
-										{fieldState.error?.message}
-									</ErrorMessage>
-								</div>
-							)}
-						/>
-					</div>
-					<button
-						type="submit"
-						className="bg-accent py-[14px] mb-[30px] px-auto w-full rounded-[50px] text-black text-lg font-bold"
-					>
-						Отправить заявку
-					</button>
-
-					<p className="text-center text-[12px]">
-						Нажимая на данную кнопку вы соглашаетесь <br />с{" "}
-						<a href="#" className="underline">
-							политикой обработки персональных <br />
-							данных
-						</a>
-					</p>
 				</div>
+				<img className="max-md:hidden w-full h-full object-cover" src="/survey-bg.png" width={3596} height={3616} />
 			</div>
 		</form>
 	);
