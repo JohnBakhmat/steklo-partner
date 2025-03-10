@@ -1,18 +1,20 @@
-import { Image } from "astro:assets";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type PropsWithChildren, useEffect } from "react";
-import {
-	Controller,
-	type ControllerFieldState,
-	type ControllerProps,
-	type ControllerRenderProps,
-	type SubmitHandler,
-	useForm,
-} from "react-hook-form";
+import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+import Checkbox from "./checkbox";
 import { RadioButton } from "./radio-button";
 
 const schema = z.object({
+	hasMounted: z.object({
+		bathroom: z.boolean(),
+		shelves: z.boolean(),
+		mirrors: z.boolean(),
+		mirrorPanels: z.boolean(),
+		glassDividers: z.boolean(),
+		stairRailing: z.boolean(),
+		glassPatios: z.boolean(),
+	}),
 	hasMeasurementExperience: z.string().transform((x) => x === "true"),
 	name: z
 		.string()
@@ -28,7 +30,7 @@ const schema = z.object({
 type Schema = z.infer<typeof schema>;
 
 export const Survey = () => {
-	const { register, handleSubmit, watch, formState, setValue, control } =
+	const { handleSubmit, watch, formState, setValue, control } =
 		useForm<Schema>({
 			defaultValues: {
 				hasMeasurementExperience: true,
@@ -60,15 +62,25 @@ export const Survey = () => {
 					<h1 className="text-accent font-bold text-[34px]/[1] mb-[30px]">
 						Заполни простую анкету
 					</h1>
+
 					<h2 className="font-bold text-[21px] mb-4">
 						Что уже монтировал?
 					</h2>
+					<div className="flex flex-col gap-[7px] mb-[50px]">
+						<Checkbox label="Душевые" />
+						<Checkbox label="Полки" />
+						<Checkbox label="Зеркала" />
+						<Checkbox label="Зеркальное панно" />
+						<Checkbox label="Стеклянные перегородки" />
+						<Checkbox label="Лестничные ограждения" />
+						<Checkbox label="Стеклянные козырьки" />
+					</div>
 
 					<Controller
 						name="hasMeasurementExperience"
 						control={control}
-						render={({ field, fieldState }) => (
-							<fieldset className="mb-5 flex flex-col gap-[9px] text-base">
+						render={({ field }) => (
+							<fieldset className="mb-5 flex flex-col gap-y-[4.5px] text-base">
 								<legend className="font-bold text-[21px] mb-4">
 									Опыт замеров
 								</legend>
