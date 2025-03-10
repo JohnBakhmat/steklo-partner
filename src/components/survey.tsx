@@ -256,7 +256,7 @@ export const Survey = () => {
 					</div>
 				</div>
 				<img
-					className="max-md:hidden w-full h-full object-cover"
+					className="max-lg:hidden w-full h-full object-cover"
 					src="/survey-bg.png"
 					width={3596}
 					height={3616}
