@@ -3,10 +3,11 @@ import InstallCard from "./install-card.astro";
 import SkillBlock from "./skill-block.astro";
 ---
 
-<section class="flex flex-col bg-white pt-[33px] items-center">
-	<div class="mx-5 lg:max-w-[1128px]">
-		<h1 class="text-[34px]">
-			Если ты <b>опытный монтажник</b> изделий из стекла и зеркал
+<section class="flex flex-col bg-white pt-[33px] lg:pt-[142px] items-center">
+	<div class="mx-5 max-w-app">
+		<h1 class="text-[34px]/[1]">
+			Если ты <b>опытный монтажник</b>
+			<br class="max-md:hidden" /> изделий из стекла и зеркал
 		</h1>
 		<h2 class="font-bold flex flex-row items-center gap-x-3 text-[21px]">
 			<span class="text-accent text-[44px]">01</span> Умеешь устанавливать
@@ -25,7 +26,7 @@ import SkillBlock from "./skill-block.astro";
 
 			<div class="flex flex-col gap-[10px]">
 				<div
-					class="text-white grid place-items-center bg-[#373A40] aspect-square rounded-[4px] p-4 max-w-[200px]"
+					class="text-white grid place-items-center bg-[#373A40] aspect-square rounded-[4px] p-4 max-w-[300px]"
 				>
 					Не говоря уже <br /> о мелочах вроде фартуков <br />и полок
 				</div>
@@ -39,13 +40,13 @@ import SkillBlock from "./skill-block.astro";
 			есть
 		</h2>
 
-		<div class="space-y-[30px] mb-[45px]">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-[30px] mb-[45px]">
 			<SkillBlock
-				img="/ruler.png"
+				img="/ruler-2.png"
 				title={`Опыт самостоятельных \nзамеров`}
 			/>
 			<SkillBlock
-				img="/calendar.png"
+				img="/calendar-2.png"
 				title={`Готовность посвятить работе \n5 дней в неделю`}
 			/>
 			<SkillBlock
