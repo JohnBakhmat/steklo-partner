@@ -4,6 +4,10 @@
 	font-family: "Inter", sans-serif;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .max-w-app {
 	@apply max-w-[1128px] mx-auto;
 }
