@@ -4,7 +4,9 @@ import { Image } from "astro:assets";
 
 <section class="bg-white px-5 flex flex-col pt-[51px]">
 	<div class="mx-auto max-w-app">
-		<h1 class="text-[34px] mb-[14px]">Зачем мы ищем <b>монтажников?</b></h1>
+		<h1 class="text-[34px] lg:text-[64px] mb-[14px]">
+			Зачем мы ищем <b>монтажников?</b>
+		</h1>
 		<div class="grid grid-cols-1 lg:grid-cols-2 items-start">
 			<div class="mb-7">
 				<h2
@@ -22,11 +24,18 @@ import { Image } from "astro:assets";
 				</p>
 			</div>
 			<Image
-				src="/toolbox.png"
+				src="/toolbox-lg.png"
 				alt={"toolbox"}
 				width={335 * 2}
 				height={320 * 2}
-				class="items-center"
+				class="items-center max-md:hidden -translate-y-[40px]"
+			/>
+			<Image
+				src="/toolbox-sm.png"
+				alt={"toolbox"}
+				width={335 * 2}
+				height={320 * 2}
+				class="items-center lg:hidden"
 			/>
 		</div>
 	</div>
