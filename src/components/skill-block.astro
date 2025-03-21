@@ -1,4 +1,5 @@
 ---
+import {Image} from 'astro:assets';
 type Props = {
 	img: string;
 	title: string;
@@ -8,7 +9,7 @@ const { img, title } = Astro.props;
 ---
 
 <div class="space-y-3">
-	<img
+	<Image
 		src={img}
 		alt=""
 		width={1340}

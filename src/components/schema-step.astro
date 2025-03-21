@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 type Props = {
 	icon: string;
 	index: number;
@@ -19,7 +21,7 @@ const idx = `${index}`.padStart(2, "0");
 		className,
 	]}
 >
-	<img src={icon} alt={"asdf"} width={86} class="justify-self-end" />
+	<Image src={icon} alt={"asdf"} width={86} height={55} class="justify-self-end" />
 	<p class="text-(left [70px]) font-extrabold leading-[1] justify-self-start">
 		{idx}
 	</p>
@@ -44,7 +46,7 @@ const idx = `${index}`.padStart(2, "0");
 		className,
 	]}
 >
-	<img src={icon} alt={"asdf"} width={86} />
+	<Image src={icon} alt={"asdf"} width={86} height={66} />
 
 	<p class="text-(left [84px]) font-extrabold leading-[1] justify-self-start">
 		{idx}

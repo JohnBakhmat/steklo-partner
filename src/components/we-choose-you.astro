@@ -1,3 +1,6 @@
+---
+import {Image} from 'astro:assets';
+---
 <div
 	class="grid grid-cols-[auto_1fr_auto] items-start gap-x-[24px] max-lg:hidden"
 >
@@ -15,5 +18,8 @@
 			>Заполни заявку</a
 		>
 	</div>
-	<img src="/check.png" class="-translate-y-15 max-w-[30vw]" alt="" />
+			<Image 
+				width={422}
+				height={313}
+				src="/check.png" class="-translate-y-15 max-w-[30vw]" alt="" />
 </div>
